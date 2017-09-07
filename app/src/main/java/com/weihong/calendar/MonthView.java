@@ -181,7 +181,7 @@ public class MonthView extends View {
                     if (CalendarUtils.isEquals(CalendarUtils.coordinateToCalendar(calendar, j, i), CalendarUtils.getClickCalendar())) {
                         drawCircle(canvas, paintCircle, CalendarUtils.calendarToCoordinate(calendar));
                     } else if (CalendarUtils.isEquals(CalendarUtils.coordinateToCalendar(calendar, j, i), moveCalendar)) {
-                        drawCircle(canvas, paintMoveCircle, CalendarUtils.calendarToCoordinate(calendar));
+                        //drawCircle(canvas, paintMoveCircle, CalendarUtils.calendarToCoordinate(calendar));
                     }
 
                     if (CalendarUtils.isEquals(CalendarUtils.coordinateToCalendar(calendar, j, i), cCalendar)) {
@@ -202,16 +202,6 @@ public class MonthView extends View {
                 }
             }
         }
-    }
-
-    private void drawCircle(Canvas canvas, Paint paint, int x, int y) {
-        if (BuildConfig.DEBUG) {
-            Log.d(TAG, "drawCircle");
-        }
-        float cx = (x - 0.5f) * cellWidth;
-        float cy = (y - 0.5f) * cellHeight;
-        float r = Math.min(cellWidth, cellHeight) / 2;
-        canvas.drawCircle(cx, cy, r, paint);
     }
 
     private void drawCircle(Canvas canvas, Paint paint, int[] coordinate) {
